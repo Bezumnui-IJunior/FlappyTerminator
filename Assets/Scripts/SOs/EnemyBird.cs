@@ -1,5 +1,4 @@
 ﻿using System;
-using Spawners;
 using UnityEngine;
 
 namespace SOs
@@ -9,9 +8,12 @@ namespace SOs
     public class EnemyBird : ScriptableObject
     {
         [SerializeField] private float _speed;
-
+        [SerializeField] private float _bulletSpeed;
+        [SerializeField] private float _minShootDelay = 0.5f;
+        [SerializeField] private float _maxShootDelay = 2f;
         public float Speed => _speed;
-
-        private void Fire() { }
+        public float BulletSpeed => _bulletSpeed;
+        public float MinShootDelay => _minShootDelay;
+        public float MaxShootDelay => _maxShootDelay;
     }
 }

@@ -6,17 +6,12 @@ namespace Spawners
 {
     public interface ISpawnable
     {
-        protected GameObject GameObject { get; }
+        // ReSharper disable once InconsistentNaming
+        public GameObject gameObject { get; }
 
         public event Action<ISpawnable> Freed;
 
-        void Enable()
-            => GameObject.SetActive(true);
-
-        void Disable()
-            => GameObject.SetActive(false);
-
         void Destroy()
-            => Object.Destroy(GameObject);
+            => Object.Destroy(gameObject);
     }
 }
